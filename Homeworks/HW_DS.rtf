@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #include <stdio.h>\
+#include <stdlib.h>\
+#include <cassert>\
+#include <time.h>\
+\
+int** create_matrix(int n)\
+\{\
+    int** m = new int*[n];\
+    for (int i = 0; i < n; ++i) \{\
+        m[i] = new int[n];\
+    \}\
+    for (int i = 0; i < n; ++i) \{\
+        for (int j = 0; j < n; ++j) \{\
+            m[i][j] = 0;\
+        \}\
+    \}\
+    return m;\
+\}\
+\
+//O(N^2)\
+\
+\
+void delete_matrix(int** m, int n)\
+\{\
+    for (int i = 0; i < n; ++i) \{\
+        delete [] m[i];\
+    \}\
+    delete [] m;\
+\}\
+\
+//O(N)\
+\
+\
+void fill_matrix_with_random_elements(int** m, int n)\
+\{\
+    for (int i = 0; i < n; ++i) \{\
+        for (int j = 0; j < n; ++j) \{\
+            int r = rand() % 2;\
+            m[i][j] = r;\
+        \}\
+    \}\
+\}\
+\
+//O(N^2)\
+\
+\
+void print_matrix(int** m, int n)\
+\{\
+    for (int i = 0; i < n; ++i) \{\
+        for (int j = 0; j < n; ++j) \{\
+            printf("%d ", m[i][j]);\
+        \}\
+        printf("\\n");\
+    \}\
+\}\
+\
+//O(N^2)\
+\
+\
+bool check_all_elements_in_row_are_zero(int** a, int n, int i)\
+\{\
+    assert(i >= 0);\
+    assert(i < n);\
+    for (int j = 0; j < n; ++j) \{\
+        if (a[i][j] != 0) \{\
+            return false;\
+        \}\
+    \}\
+    return true;\
+\}\
+\
+//O(N)\
+\
+\
+bool check_all_elements_in_column_are_zero(int** a, int n, int i)\
+\{\
+    assert(i >= 0);\
+    assert(i < n);\
+    for (int j = 0; j < n; ++j) \{\
+        if (a[j][i] != 0) \{\
+            return false;\
+        \}\
+    \}\
+    return true;\
+\}\
+\
+//O(N)\
+\
+\
+void check_for_zero(int** m, int n)\
+\{\
+    for (int i = 0; i < n; ++i) \{\
+        bool b = check_all_elements_in_row_are_zero(m, n, i);\
+        bool x = check_all_elements_in_column_are_zero(m, n, i);\
+        if (b) \{\
+            printf("all elements in row %d are zero\\n", i);\
+            break;\
+        \}\
+        if (x) \{\
+            printf("all elements in column %d are zero\\n", i);\
+            break;\
+        \}\
+    \}\
+\}\
+\
+//O(N)\
+\
+\
+int main()\
+\{\
+    int n = 0;\
+    // Use current time as seed for random generator\
+    srand(time(0));\
+    printf("Enter array size: ");\
+    scanf("%d", &n);\
+    if (n <= 0) \{\
+        printf("Invalid input, exiting...\\n");\
+        return EXIT_FAILURE;\
+    \}\
+    int** matrix = create_matrix(n);\
+    fill_matrix_with_random_elements(matrix, n);\
+    print_matrix(matrix, n);\
+    check_for_zero(matrix, n);\
+    return EXIT_SUCCESS;\
+\}\
+\
+//O(N)}
