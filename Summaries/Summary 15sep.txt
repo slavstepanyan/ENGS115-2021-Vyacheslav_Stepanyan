@@ -1,0 +1,7 @@
+When we define sequence concept, it should be strict linear order
+Create(size_type S);
+struct a;
+
+to allocate memory for array need ot "malloc(sizeof(element_type) * S);"
+
+Return a;
