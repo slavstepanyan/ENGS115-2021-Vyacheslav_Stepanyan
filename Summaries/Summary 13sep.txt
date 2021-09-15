@@ -1,0 +1,4 @@
+Array/vector (Random access Container) -> Double linked list (Reverse Container) -> Single Linked list (Forward Container) -> Container
+STL library became part of C++
+If need to add element to array, need to allocate new memory with n+1 space, copy array and free the old memory space
+Complexity of adding element to array is O(N+1+1+1) => O O(N)
