@@ -1,0 +1,5 @@
+Node is created with def. value and Null
+As it is first time implemented, we assert and assign start to the first element (if start == NULL)
+Pervious is assigned null at first and pointer to the node (first element)
+Previous points to next which is assigned to n
+To insert element to list we create node and need to at first point that element to element of next position and after point prev element to newly inserted one to not loose data
