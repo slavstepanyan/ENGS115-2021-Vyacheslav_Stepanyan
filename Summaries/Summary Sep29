@@ -1,0 +1,31 @@
+Algorithms
+Can’t go back in single linked list
+Can do that in double linked list
+Basic operations
+	Insertion - add element at beginning of the list
+	Deletion - delete first element
+	Display - display list
+	Search - search element using key
+	Delete - delete n-th element using given key
+	Reverse - reverse the list
+	Insert - add element to n-th position using given key
+
+Double Linked List is a variation of linked list which navigation is possible in both ways either forward or backward easily as compared to Single Linked List
+Prev/data/Next
+First element Prev == Null
+Last element Next == Null
+Head is a pointer that points to first element
+When no node created, Head == Null
+
+Circular linked list (Double Linked List + First and Last elements point to each other)
+This kind of lists are looped, and Head can be pointing to any element because there is no starting and ending point here
+
+Search
+Searching element by value
+Complexity = O(N)
+Searchall -> complexity O(N)
+
+If the array is ordered, we are going to compare middle number if bigger than need to check the middle number of second part of numbers, if smaller, then 1st part
+The complexity is O(log2n)
+
+
