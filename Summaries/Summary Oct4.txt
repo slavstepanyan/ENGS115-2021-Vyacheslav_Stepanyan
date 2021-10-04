@@ -1,0 +1,7 @@
+Buble sort, Selection sort both got same complexity O(N^2) because in the end of each iteration you fix 1 element
+Insertion - compares element with next element, if bigger, changes place, if smaller, moves forward
+Even in best case selection has n^2 complexity because doing all comparisons and fixings
+Insertion has n complexity in best case scenario
+I can't summarize merge but I understand it)))
+First part of merge has complexity of log2 n
+Sexond part of merge has complexity of n
