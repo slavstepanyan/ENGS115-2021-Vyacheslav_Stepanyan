@@ -1,0 +1,3 @@
+Select sort
+Need to consider that last element can be the biggest and set comparison of largest number index and last element. If not equal then swap.
+Assertion checks the condition and stops the implementation if the condition is not satisfied 
