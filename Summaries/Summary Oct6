@@ -1,0 +1,4 @@
+Merge function has subfundtions inside of it
+For example it has 8 elements. it will devided it to 4(1) and 4(2) at first
+Then it will devide 4(1) to 2(1) and 2(2)
+After that devide 2(1) to 1(1) and 1(2) and compare those. After it will return and then get back to 2(2) and work with that logic for all array
